@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     model = RandomForestClassifier(random_state=42)
 
-    mlflow.log_model(
+    mlflow.sklearn.log_model(
         model,
         artifact_path='model',
     )
