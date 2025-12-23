@@ -1,0 +1,35 @@
+artifact_path: /home/runner/work/Workflow-CI/Workflow-CI/mlruns/0/models/m-5ac5f717c7c543f78d3cfd72cd3429a1/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+is_signature_from_type_hint: false
+mlflow_version: 3.8.0
+model_id: m-5ac5f717c7c543f78d3cfd72cd3429a1
+model_size_bytes: 6322577
+model_uuid: m-5ac5f717c7c543f78d3cfd72cd3429a1
+prompts: null
+run_id: 2988f7ca600f42ffbc17ea58417a9987
+signature:
+  inputs: '[{"type": "double", "name": "cat__sex_F", "required": true}, {"type": "double",
+    "name": "cat__sex_I", "required": true}, {"type": "double", "name": "cat__sex_M",
+    "required": true}, {"type": "double", "name": "num__length", "required": true},
+    {"type": "double", "name": "num__diameter", "required": true}, {"type": "double",
+    "name": "num__height", "required": true}, {"type": "double", "name": "num__whole_weight",
+    "required": true}, {"type": "double", "name": "num__shucked_weight", "required":
+    true}, {"type": "double", "name": "num__viscera_weight", "required": true}, {"type":
+    "double", "name": "num__shell_weight", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-12-23 05:34:31.065763'
