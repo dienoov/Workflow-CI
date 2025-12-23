@@ -28,7 +28,7 @@ jobs:
 
       - name: Run mlflow project
         run: |
-          mlflow run MLproject
+          mlflow run MLProject
             - name: Save mlruns to repo
 
       - name: Save mlruns to repo
