@@ -31,7 +31,7 @@ jobs:
 
       - name: Run mlflow project
         run: |
-          mlflow run MLProject --env-manager=local
+          mlflow run MLProject --entry-point main --experiment-name modelling --env-manager=local
 
       - name: Save mlruns to repo
         uses: stefanzweifel/git-auto-commit-action@v7
@@ -42,7 +42,7 @@ jobs:
 
       - name: Get latest mlflow run_id
         run: |
-          RUN_ID=$(mlflow runs list --max-results 1 --output-format json | jq -r '.[0].run_id')
+          RUN_ID=$(ls -td mlruns/0/*/ | head -n 1 | cut -d'/' -f3)
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
           echo "Latest run_id: $RUN_ID"
 
