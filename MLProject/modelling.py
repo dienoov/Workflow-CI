@@ -26,5 +26,3 @@ if __name__ == '__main__':
         model,
         name='model',
     )
-
-    mlflow.log_metric('accuracy', model.score(X_test, y_test))
