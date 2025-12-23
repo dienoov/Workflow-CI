@@ -24,5 +24,3 @@ if __name__ == '__main__':
         model,
         artifact_path='model',
     )
-
-    mlflow.log_metric('accuracy', model.score(X_test, y_test))
