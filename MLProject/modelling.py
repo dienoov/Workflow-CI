@@ -3,7 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import mlflow
 
-mlflow.set_experiment('modelling')
 if __name__ == '__main__':
     df = pd.read_csv('abalone_preprocessing.csv')
     X = df.drop(columns=['rings'])
@@ -17,13 +16,15 @@ if __name__ == '__main__':
         stratify=y,
     )
 
+    mlflow.set_experiment('modelling')
+
     model = RandomForestClassifier(random_state=42)
 
     model.fit(X_train, y_train)
 
+    mlflow.log_metric('accuracy', model.score(X_test, y_test))
+
     mlflow.sklearn.log_model(
         model,
-        artifact_path='model',
+        name='model',
     )
-
-    mlflow.log_metric('accuracy', model.score(X_test, y_test))
