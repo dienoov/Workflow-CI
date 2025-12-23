@@ -22,9 +22,9 @@ if __name__ == '__main__':
 
     model.fit(X_train, y_train)
 
-    mlflow.log_metric('accuracy', model.score(X_test, y_test))
-
     mlflow.sklearn.log_model(
         model,
         name='model',
     )
+
+    mlflow.log_metric('accuracy', model.score(X_test, y_test))
