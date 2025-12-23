@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import mlflow
 
-df = pd.read_csv('abalone_preprocessing.csv')
+df = pd.read_csv('MLProject/abalone_preprocessing.csv')
 X = df.drop(columns=['rings'])
 y = df['rings']
 
