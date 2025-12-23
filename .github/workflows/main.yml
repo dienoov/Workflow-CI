@@ -28,7 +28,7 @@ jobs:
 
       - name: Run mlflow project
         run: |
-          mlflow run MLProject --env-manager=local
+          python MLProject/modelling.py
 
       - name: Save mlruns to repo
         uses: stefanzweifel/git-auto-commit-action@v7

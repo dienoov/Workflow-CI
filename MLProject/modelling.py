@@ -15,6 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y,
 )
 
-mlflow.sklearn.autolog()
-model = RandomForestClassifier(random_state=42)
-model.fit(X_train, y_train)
+with mlflow.start_run():
+    mlflow.sklearn.autolog()
+    model = RandomForestClassifier(random_state=42)
+    model.fit(X_train, y_train)
