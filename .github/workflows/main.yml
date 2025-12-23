@@ -28,8 +28,7 @@ jobs:
 
       - name: Run mlflow project
         run: |
-          mlflow run MLProject
-            - name: Save mlruns to repo
+          mlflow run MLProject --env-manager=local
 
       - name: Save mlruns to repo
         uses: stefanzweifel/git-auto-commit-action@v7
