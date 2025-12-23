@@ -18,11 +18,11 @@ if __name__ == '__main__':
 
     model = RandomForestClassifier(random_state=42)
 
+    model.fit(X_train, y_train)
+
     mlflow.sklearn.log_model(
         model,
         artifact_path='model',
     )
-
-    model.fit(X_train, y_train)
 
     mlflow.log_metric('accuracy', model.score(X_test, y_test))
