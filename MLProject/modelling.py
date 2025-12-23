@@ -16,14 +16,13 @@ if __name__ == '__main__':
         stratify=y,
     )
 
-    with mlflow.start_run():
-        model = RandomForestClassifier(random_state=42)
+    model = RandomForestClassifier(random_state=42)
 
-        mlflow.log_model(
-            model,
-            artifact_path='model',
-        )
+    mlflow.log_model(
+        model,
+        artifact_path='model',
+    )
 
-        model.fit(X_train, y_train)
+    model.fit(X_train, y_train)
 
-        mlflow.log_metric('accuracy', model.score(X_test, y_test))
+    mlflow.log_metric('accuracy', model.score(X_test, y_test))
